@@ -1,13 +1,223 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+
+/* dt162g projekt- administration av client Av Alice Fagerberg HT21  */
+
+/*kropp och grundinställningar */
+*{  margin: 0; padding:0; box-sizing: border-box;}
+
+html {
+  scroll-behavior: smooth;
 }
 
+body, button {
+  font-family:'Nunito', sans-serif;
+}
+button, input[type=submit] {cursor:pointer;}
+a {text-decoration:none ;}
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family:'Nunito', sans-serif;
+}
+
+/*Sidhuvud med logga och nav*/
+header {
+  position:sticky;
+  top:0;
+  padding:10px;
+  display:flex;
+  justify-content: space-evenly;
+  background-color:rgba(255, 255, 255, 0.918);
+}
+
+
+.logo {
+  display:inline-block;
+  font-size:1.2em;
+  background-color:rgb(41, 41, 41);
+  padding:18px;
+  height:90px;
+  border-radius:30px;
+  font-weight:bold;
+  color:white;
+  text-align: center;
+}
+header ul { list-style:none; margin-top:8px;}
+header ul li {float:left;}
+header ul li a { 
+  text-decoration: none; 
+  display: block; 
+  padding:5px 10px 2px 10px; 
+  color:rgb(255, 146, 95);
+  font-size:1.15em;
+  font-weight:400;
+  transition:all 0.3s;
+}
+header ul li a:hover{ color:rgb(247, 104, 38);}
+
+
+h1 {
+  text-align:center;
+  color:rgb(104, 104, 104);;
+  font-size:2em;
+  font-weight:normal;
+  padding:50px 10px 20px 10px;
+}
+#content p {
+  font-size:1.1em;
+  color:rgb(41, 41, 41);
+}
+
+/*Inloggning index sida - formulär*/
+.app { padding: 40px 10px 0 10px;}
+
+.error {padding-bottom:10px; color:rgb(230, 85, 18);}
+.loginformbox {
+  max-width:420px;
+  margin:0 auto;
+  padding:20px;
+  border:2px solid rgb(192, 192, 192);
+  border-radius:20px;
+  margin-bottom:100px;
+}
+
+.loginform {margin-top:10px;}
+.loginform input[type=submit], #addTopic button{
+  background-color: rgb(255, 146, 95);
+  border:0.5px solid rgba(228, 130, 84, 0.747);
+  border-radius:3px;
+  padding:8px;
+  color:rgb(255, 255, 255);
+  transition:all 0.3s;
+}
+
+.loginform input[type=submit]:hover, #addTopic button:hover {background-color: rgb(252, 109, 44);}
+.logout {
+  max-width:400px;
+  margin:0 auto;
+  display:flex;
+  justify-content: right;
+  padding: 0 10px 0 10px;
+}
+.logout button { 
+  padding:3px 5px 3px 5px; 
+  background-color:rgb(41, 41, 41); 
+  color:white;
+  border:0;
+  border-radius:3px;
+}
+
+/*Formulär allmänt*/
+form {
+  max-width:400px;
+  margin:0 auto;
+  
+}
+form label {
+  display:block;
+  font-size:1.1em;
+}
+.message{font-size:1.1em; max-width:400px; margin:0 auto; color:rgb(230, 85, 18);}
+/*i lägga till- del*/
+.addbox {
+  padding:0 10px 0 10px;
+}
+#addTopic {scroll-margin-top:120px;}
+#addTopic button { font-size:1.1em;}
+form input, form textarea { width:100%; font-size:1.1em; margin-bottom:12px; padding:6px;}
+
+/*Lista med topictitlar*/
+.loading {
+  max-width:630px;
+  margin:0 auto;
+  padding:10px;
+  color:grey;
+}
+#titlelist {
+  max-width:610px;
+  margin:0 auto;
+  padding:50px 10px 0 10px;
+  scroll-margin-top:120px;
+}
+#titlelist ul {
+  padding:10px;
+  display:flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+  gap:14px;
+  list-style: none;
+  max-width:610px;
+  margin:0 auto;
+}
+
+#titlelist a {color:rgb(41, 41, 41); font-size:1.2em; padding-right:12px; border-right:1px solid rgb(199, 199, 199);}
+#titlelist a:hover {color:rgb(134, 134, 134);}
+
+/*Lista med topics med betydelser*/
+#topicitems {
+  padding:10px 10px 50px 10px;
+  max-width:630px;
+  margin:0 auto;  
+}
+
+#topicitems h2, #titlelist h2, .loginformbox h2 {
+  font-size:1.5em;
+  color:grey;
+  font-weight:normal;
+  padding-bottom:10px;
+  border-bottom:1px solid rgb(190, 190, 190);
+}
+
+#topicitems ul li{
+  display:inline-block;
+  width:100%;
+  padding:10px;
+  border-bottom:2px solid grey;
+  list-style:none;
+  margin-bottom:10px;
+  scroll-margin-top:120px;
+}
+li strong { font-size:1.2em;}
+
+li p {
+  margin:10px 0 10px 0;
+  padding:10px;
+  border:1px solid rgb(211, 211, 211);
+  max-height:120px;
+  overflow: auto;
+}
+
+li button {
+  float:right;
+  margin-left:10px;
+  padding:5px; 
+  background-color:white; 
+  border:2px solid rgb(41, 41, 41); 
+  border-radius:3px;
+  font-weight:bold;
+}
+
+/*Sidfot*/
+footer {
+  padding:50px 10px 50px 10px;
+}
+footer p { font-size:1em;text-align:center; color:rgb(41, 41, 41);}
+footer a { font-weight:bold; color: grey;}
+
+/*from skrämar vid 540px*/
+@media screen and ( min-width:540px) {
+
+  /*Sidhuvud*/
+  header {
+    display:flex;
+    justify-content: space-evenly;
+  }
+  header ul { margin-top:30px;}
+  header ul li{ margin-right:10px;}
+
+  .logo {
+    font-size:1.3em;
+    height:95px;
+    border-radius:30px;
+    margin-right:20px;
+  }
+
 }
